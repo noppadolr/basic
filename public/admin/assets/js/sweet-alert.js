@@ -189,6 +189,14 @@ $(function() {
             showConfirmButton: false,
             timer: 3000
         })
+    }else if (type === 'SupplierStored') {
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Supplier has been Stored',
+            showConfirmButton: false,
+            timer: 1500
+        })
     }
 
 

@@ -22,22 +22,17 @@
             <li class="nav-item nav-category">web apps</li>
 
             <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="collapse" href="#emails" role="button" aria-expanded="false" aria-controls="emails">
-                    <i class="link-icon" data-feather="mail"></i>
-                    <span class="link-title">Email</span>
+                <a class="nav-link" data-bs-toggle="collapse" href="#suppliers" role="button" aria-expanded="false" aria-controls="suppliers">
+                    <i class="link-icon" data-feather="truck"></i>
+                    <span class="link-title">Manage Supplier</span>
                     <i class="link-arrow" data-feather="chevron-down"></i>
                 </a>
-                <div class="collapse" id="emails">
+                <div class="collapse" id="suppliers">
                     <ul class="nav sub-menu">
                         <li class="nav-item">
-                            <a href="{{ url('email/inbox') }}" class="nav-link">Inbox</a>
+                            <a href="{{ url('supplier/all') }}" class="nav-link">All Suppliers</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="{{ url('email/read') }}" class="nav-link">Read</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ url('email/compose') }}" class="nav-link">Compose</a>
-                        </li>
+
                     </ul>
                 </div>
             </li>

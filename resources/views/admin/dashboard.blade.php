@@ -1,6 +1,7 @@
 @extends('admin.layout.main')
 @section('title','Admin Panel')
 @section('main')
+    <div class="page-content">
     @php
         $id =\Illuminate\Support\Facades\Auth::user()->id;
         $adminData = \App\Models\User::find($id);
@@ -407,7 +408,15 @@
             </div>
         </div>
     </div> <!-- row -->
-
-
+    </div>
+    @push('scripts')
+        <script type="text/javascript">
+            @if(Session::has('logedin'))
+            $(document).ready( function () {
+                showSwal('login');
+            });
+            @endif
+        </script>
+    @endpush
 
 @endsection

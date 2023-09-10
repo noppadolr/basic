@@ -2,6 +2,7 @@
 @section('title','Admin Profile')
 
 @section('main')
+    <div class="page-content">
             <div class="row profile-body">
                 {{--            <!-- left wrapper start -->--}}
                 <div class="d-none d-md-block col-md-4 col-xl-4 left-wrapper">
@@ -174,10 +175,10 @@
                 {{--            <!-- middle wrapper end -->--}}
 
             </div>
-
+    </div>
             @endsection
         @push('scripts')
-            <script src="{{asset('jquery-3.7.0.min.js')}}"></script>
+{{--            <script src="{{asset('jquery-3.7.0.min.js')}}"></script>--}}
         <script type="text/javascript">
             $(document).ready(function(){
                 $('#image').change(function(e){
@@ -191,6 +192,7 @@
 
             @if(Session::has('profileupdated'))
             $(document).ready( function () {
+
                 showSwal('profileupdated');
             });
             @endif

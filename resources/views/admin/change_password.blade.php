@@ -1,7 +1,7 @@
 @extends('admin.layout.main')
 @section('title','Change Password')
 @section('main')
-
+    <div class="page-content">
 
         <div class="row profile-body">
             <!-- left wrapper start -->
@@ -139,7 +139,7 @@
             <!-- middle wrapper end -->
 
         </div>
-
+    </div>
 
 
 

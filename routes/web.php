@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgentController;
+use App\Http\Controllers\Pos\SupplierController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +35,8 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 Route::middleware(['auth','role:admin'])->group(function () {
+
+    //AdminController Route
     Route::controller(AdminController::class)->group(function (){
         Route::get('admin/dashboard','AdminDashboard')->name('admin/dashboard');
         Route::get('admin/logout','destroy')->name('admin/logout');
@@ -42,6 +45,19 @@ Route::middleware(['auth','role:admin'])->group(function () {
         Route::get('/admin/change/password','ChangePassword')->name('admin.change.password');
         Route::post('/admin/updadte/password','UpdatePassword')->name('admin.update.password');
     });
+    //End AdminController Route
+
+
+    //Supplier Route
+    Route::controller(SupplierController::class)->group(function (){
+        Route::get('supplier/all','SupplierAll')->name('supplier/all');
+        Route::get('supplier/add','SupplierAdd')->name('supplier/add');
+        Route::post('supplier/store','SupplierStore')->name('supplier/store');
+
+
+    });
+    //End Supplier Route
+
 }); //End group Admin Middleware
 
     Route::middleware(['auth','role:agent'])->group(function () {
